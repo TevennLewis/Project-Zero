@@ -1,5 +1,5 @@
 const demonSlayer = {
-    name: prompt("State Your Name"),
+    name: "Tevenn Lewis",
     time: 60,
     rank: 1,
     tCBScale: 10,
@@ -8,16 +8,29 @@ const demonSlayer = {
     gameStart(event){
         console.warn("=== Begin Your Training ===");
     },
-};
+}
 
-console.log(demonSlayer.gameStart());
+let timer = $("h1");
+let countDown = 60;
 
-//tCBScale
+ function countDownValue(){
+    demonSlayer.time--;
+    timer.text(`Timer: ${demonSlayer.time}sec`);
+}
+$("#beginButton").on("click", function(){
+    setInterval(countDownValue, 1000);
+});
 
 
 
 
 
-$("button").on("click", function(){
+$("#tcb").on("click", function(){
     demonSlayer.tCBScale++;
+})
+$("#str").on("click", function(){
+    demonSlayer.strengthScale++;
+})
+$("#breath").on("click", function(){
+    demonSlayer.breathTechniqueScale++;
 })
