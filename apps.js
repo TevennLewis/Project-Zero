@@ -27,6 +27,7 @@ let breathProgress = $("#breathScore")
     }
     if(demonSlayer.time === 0 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0){
         $("#zenitsu").attr("src", "https://i.pinimg.com/originals/73/47/78/7347789b4ef2131e1de720843891bd58.jpg");
+        $("body").css("background-color", "rgb(0, 204, 255)");
         clearInterval(stopTime);
         clearInterval(stopProgress);
     }
