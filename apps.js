@@ -81,6 +81,7 @@ $("#beginButton").on("click", function(){
 $("#tcb").on("click", function(){
     demonSlayer.tCBScale++;
     $("#tcbScore").text(demonSlayer.tCBScale);
+    $("img").css("transform", "scale(1.3)");
 })
 $("#str").on("click", function(){
     demonSlayer.strengthScale++;
