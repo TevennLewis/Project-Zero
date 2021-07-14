@@ -19,7 +19,10 @@ let breathProgress = $("#breathScore")
  function countDownValue(){
     demonSlayer.time--;
     timer.text(`Timer: ${demonSlayer.time}sec`);
-    
+    if(demonSlayer.tCBScale === 0 || demonSlayer.strengthScale === 0 || demonSlayer.breathTechniqueScale === 0) {
+        $(".container").empty();
+        $(".container").append($("<h1>GAME OVER</h1>").css("font-size", "100px"));
+    }
     if(demonSlayer.time === 0){
         clearInterval(stopTime);
         clearInterval(stopProgress);
