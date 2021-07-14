@@ -1,6 +1,6 @@
 const demonSlayer = {
     name: "Tevenn Lewis",
-    time: 15,
+    time: 90,
     rank: "Mizunoto",
     tCBScale: 10,
     strengthScale: 10,
@@ -25,17 +25,25 @@ let breathProgress = $("#breathScore")
         $(".container").empty();
         $(".container").append($("<h1>A DEMON ATE YOU</h1>").css("font-size", "100px"));
     }
-    if(demonSlayer.time === 10 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0){
+    if(demonSlayer.time <= 60 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0){
         $("#zenitsu").attr("src", "https://i.pinimg.com/originals/73/47/78/7347789b4ef2131e1de720843891bd58.jpg");
         $("body").css("background-color", "rgb(0, 204, 255)");
         $("#ranking").text("Rank: Tsuchinoto");
+        demonSlayer.tCBScale-=2;
+        demonSlayer.strengthScale-=2;
+        demonSlayer.breathTechniqueScale-=2;
+        console.log(demonSlayer.tCBScale);
         // clearInterval(stopTime);
         // clearInterval(stopProgress);
-    } else if (demonSlayer.time === 5 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
+    } else if (demonSlayer.time <= 30 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
         $("body").css("background-color", "rgb(4, 90, 170)");
         $("#zenitsu").attr("src", "http://images6.fanpop.com/image/photos/43400000/-Giyu-Tomioka-Demon-Slayer-anime-43458556-540-810.jpg");
         $("#ranking").text("Rank: Hashira");
-    } else if (demonSlayer.time === 0 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
+        demonSlayer.tCBScale-=3;
+        demonSlayer.strengthScale-=3;
+        demonSlayer.breathTechniqueScale-=3;
+        console.log(demonSlayer.strengthScale);
+    } else if (demonSlayer.time <= 0 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
         clearInterval(stopTime);
         clearInterval(stopProgress);
         $(".container").empty();
@@ -59,7 +67,7 @@ let stopProgress="";
 
 $("#beginButton").on("click", function(){
    stopTime = setInterval(countDownValue, 1000);
-    stopProgress = setInterval(progressBarValue, 2000);
+    stopProgress = setInterval(progressBarValue, 1000);
 
 });
 
