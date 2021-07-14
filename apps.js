@@ -10,7 +10,7 @@ const demonSlayer = {
     },
 }
 
-let timer = $("h1");
+let timer = $("h1")
 let tcbProgress = $("#tcbScore");
 let strengthProgress = $("#strScore")
 let breathProgress = $("#breathScore")
@@ -19,6 +19,12 @@ let breathProgress = $("#breathScore")
  function countDownValue(){
     demonSlayer.time--;
     timer.text(`Timer: ${demonSlayer.time}sec`);
+    
+    if(demonSlayer.time === 0){
+        clearInterval(stopTime);
+        clearInterval(stopProgress);
+    }
+
 
 }
 
@@ -30,12 +36,17 @@ function progressBarValue(){
     strengthProgress.text(`${demonSlayer.strengthScale}`);
     breathProgress.text(`${demonSlayer.breathTechniqueScale}`);
 }
+
+let stopTime="";
+let stopProgress="";
+
 $("#beginButton").on("click", function(){
-    setInterval(countDownValue, 1000);
-    setInterval(progressBarValue, 2000);
+   stopTime = setInterval(countDownValue, 1000);
+    stopProgress = setInterval(progressBarValue, 2000);
 
 });
 
+    
 
 
 
