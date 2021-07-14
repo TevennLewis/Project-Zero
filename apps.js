@@ -25,10 +25,11 @@ let breathProgress = $("#breathScore")
         $(".container").empty();
         $(".container").append($("<h1>A DEMON ATE YOU</h1>").css("font-size", "100px"));
     }
-    // if(demonSlayer.time === 0 || demonSlayer.tCBScale === 0 || demonSlayer.strengthScale === 0 || demonSlayer.breathTechniqueScale === 0){
-    //     clearInterval(stopTime);
-    //     clearInterval(stopProgress);
-    //}
+    if(demonSlayer.time === 0 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0){
+        $("#zenitsu").attr("src", "https://i.pinimg.com/originals/73/47/78/7347789b4ef2131e1de720843891bd58.jpg");
+        clearInterval(stopTime);
+        clearInterval(stopProgress);
+    }
 
 
 }
