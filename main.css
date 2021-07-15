@@ -10,9 +10,17 @@ body {
 }
 
 main {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-bottom: 50px;
+    justify-content: center;
+    flex-direction: column;
 }
+
+/* input {
+    display: inline-block;
+} */
+
 footer {
     display: inline-block;
 }

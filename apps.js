@@ -25,7 +25,7 @@ let breathProgress = $("#breathScore")
         $(".container").empty();
         $(".container").append($("<h1>A DEMON ATE YOU</h1>").css("font-size", "100px"));
     }
-    if(demonSlayer.time <= 60 && demonSlayer.time > 30 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0){
+    if(demonSlayer.time <= 60  && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0){
         $("#zenitsu").attr("src", "https://i.pinimg.com/originals/73/47/78/7347789b4ef2131e1de720843891bd58.jpg");
         $("body").css("background-color", "rgb(0, 204, 255)");
         $("#ranking").text("Rank: Tsuchinoto");
@@ -35,14 +35,14 @@ let breathProgress = $("#breathScore")
         console.log(demonSlayer.tCBScale);
         // clearInterval(stopTime);
         // clearInterval(stopProgress);
-    } else if (demonSlayer.time <= 30 && demonSlayer.time > 0 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
+    } else if (demonSlayer.time <= 30 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
         $("body").css("background-color", "rgb(4, 90, 170)");
         $("#zenitsu").attr("src", "http://images6.fanpop.com/image/photos/43400000/-Giyu-Tomioka-Demon-Slayer-anime-43458556-540-810.jpg");
         $("#ranking").text("Rank: Hashira");
         demonSlayer.tCBScale-=3;
         demonSlayer.strengthScale-=3;
         demonSlayer.breathTechniqueScale-=3;
-        console.log(demonSlayer.strengthScale);
+        console.log(demonSlayer.tCBScale);
     } else if (demonSlayer.time <= 0 && demonSlayer.tCBScale > 0 && demonSlayer.strengthScale > 0 && demonSlayer.breathTechniqueScale > 0) {
         clearInterval(stopTime);
         clearInterval(stopProgress);
@@ -81,7 +81,7 @@ $("#beginButton").on("click", function(){
 $("#tcb").on("click", function(){
     demonSlayer.tCBScale++;
     $("#tcbScore").text(demonSlayer.tCBScale);
-    $("img").css("transform", "scale(1.3)");
+    // $("img").css("transform", "scale(1.3)");
 })
 $("#str").on("click", function(){
     demonSlayer.strengthScale++;
@@ -91,3 +91,5 @@ $("#breath").on("click", function(){
     demonSlayer.breathTechniqueScale++;
     $("#breathScore").text(demonSlayer.breathTechniqueScale);
 })
+
+// $("img").after($("input"));
