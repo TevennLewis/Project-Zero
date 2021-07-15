@@ -75,7 +75,15 @@ $("#beginButton").on("click", function(){
 
 
 
+$("#submit").on("click", function() {
+    let $inputName = $("input").val();
+    $("input").before($inputName);
+    $("input").remove();
+    $("#submit").remove();
+   
+    
 
+})
 
 
 $("#tcb").on("click", function(){
