@@ -17,9 +17,10 @@ main {
     flex-direction: column;
 }
 
-/* input {
-    display: inline-block;
-} */
+input {
+    margin-bottom: 15px;
+    text-align: center;
+}
 
 footer {
     display: inline-block;
