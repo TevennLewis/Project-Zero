@@ -77,7 +77,7 @@ $("#beginButton").on("click", function(){
 
 $("#submit").on("click", function() {
     let $inputName = $("input").val();
-    $("input").before($inputName);
+    $("input").before($(`<h2>${$inputName}</h2>`));
     $("input").remove();
     $("#submit").remove();
    
