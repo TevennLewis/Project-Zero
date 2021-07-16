@@ -116,6 +116,7 @@ function progressBarValue(){
         clearInterval(stopProgress);
         $("main").empty();
         $("main").append($("<h1>YOU WIN!!!</h1>").css("font-size", "100px"));
+        $("button").remove();
     }
 }
 
