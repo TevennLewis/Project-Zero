@@ -125,6 +125,8 @@ let stopProgress="";
 $("#beginButton").on("click", function(){
    stopTime = setInterval(countDownValue, 1000);
     stopProgress = setInterval(progressBarValue, 2000);
+    $("#beginButton").remove();
+
 
 });
 
